@@ -1,0 +1,2213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>USCIS Civics Test — 2025 Version (128 Questions)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0a0e1a;
+    --paper: #f4efe6;
+    --cream: #ebe3d3;
+    --red: #b31942;
+    --red-dark: #7a0e29;
+    --blue: #0a3161;
+    --blue-dark: #061f3f;
+    --gold: #c4a35a;
+    --success: #2d6a4f;
+    --muted: #6b6558;
+    --border: #1a1f2e;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  body {
+    background-image:
+      radial-gradient(circle at 20% 10%, rgba(10, 49, 97, 0.04) 0%, transparent 40%),
+      radial-gradient(circle at 80% 90%, rgba(179, 25, 66, 0.04) 0%, transparent 40%),
+      url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' /%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* ========== HEADER ========== */
+  .seal-bar {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 8px 24px;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px double var(--gold);
+  }
+
+  .seal-bar .stars {
+    letter-spacing: 0.4em;
+    color: var(--gold);
+  }
+
+  header.masthead {
+    padding: 40px 24px 24px;
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(180deg, var(--paper) 0%, var(--cream) 100%);
+    position: relative;
+  }
+
+  header.masthead::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 4px;
+    background: repeating-linear-gradient(
+      90deg,
+      var(--red) 0, var(--red) 40px,
+      var(--paper) 40px, var(--paper) 60px,
+      var(--blue) 60px, var(--blue) 100px,
+      var(--paper) 100px, var(--paper) 120px
+    );
+  }
+
+  .masthead-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .eagle-seal {
+    width: 72px;
+    height: 72px;
+    border: 2px solid var(--ink);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--paper);
+    position: relative;
+  }
+
+  .eagle-seal::before {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    border: 1px solid var(--ink);
+    border-radius: 50%;
+  }
+
+  .masthead-title h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+
+  .masthead-title .subtitle {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 8px;
+  }
+
+  .masthead-title .subtitle em {
+    font-style: normal;
+    color: var(--red);
+    font-weight: 600;
+  }
+
+  .date-stamp {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: right;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .date-stamp strong {
+    display: block;
+    color: var(--ink);
+    font-size: 12px;
+  }
+
+  /* ========== MAIN LAYOUT ========== */
+  main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+
+  .view { display: none; }
+  .view.active { display: block; animation: fadeIn 0.4s ease; }
+
+  /* ========== INTAKE (WELCOME) SCREEN ========== */
+  .intake-wrap {
+    max-width: 640px;
+    margin: 40px auto 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .intake-card {
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    padding: 48px 44px;
+    box-shadow: 8px 8px 0 var(--ink);
+    position: relative;
+  }
+
+  .intake-card::before {
+    content: '';
+    position: absolute;
+    top: -2px; left: -2px; right: -2px; height: 6px;
+    background: repeating-linear-gradient(
+      90deg,
+      var(--red) 0, var(--red) 24px,
+      var(--paper) 24px, var(--paper) 36px,
+      var(--blue) 36px, var(--blue) 60px,
+      var(--paper) 60px, var(--paper) 72px
+    );
+  }
+
+  .form-stamp {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-weight: 700;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .form-stamp .form-code {
+    color: var(--muted);
+    font-weight: 500;
+  }
+
+  .intake-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4.2vw, 40px);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 20px 0 12px;
+  }
+
+  .intake-title em {
+    font-style: italic;
+    color: var(--red);
+    font-weight: 400;
+  }
+
+  .intake-sub {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--muted);
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 1px dashed rgba(10, 14, 26, 0.25);
+  }
+
+  .field-group {
+    margin-bottom: 24px;
+  }
+
+  .field-label {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink);
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .field-label .req {
+    color: var(--red);
+    margin-left: 4px;
+  }
+
+  .field-hint {
+    font-size: 12px;
+    color: var(--muted);
+    font-family: 'Inter', sans-serif;
+    margin-top: 6px;
+    font-style: italic;
+  }
+
+  .text-field {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid var(--ink);
+    padding: 10px 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--ink);
+    outline: none;
+  }
+
+  .text-field:focus {
+    border-bottom-color: var(--red);
+  }
+
+  .text-field::placeholder {
+    color: var(--muted);
+    opacity: 0.5;
+    font-style: italic;
+  }
+
+  .select-field {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid var(--ink);
+    padding: 10px 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--ink);
+    outline: none;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%230a0e1a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right center;
+    padding-right: 24px;
+  }
+
+  .select-field:focus {
+    border-bottom-color: var(--red);
+  }
+
+  .intake-submit {
+    width: 100%;
+    background: var(--red);
+    color: var(--paper);
+    border: 2px solid var(--red);
+    padding: 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 16px;
+  }
+
+  .intake-submit:hover {
+    background: var(--red-dark);
+    border-color: var(--red-dark);
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0 var(--ink);
+  }
+
+  .intake-footnote {
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 24px;
+    line-height: 1.8;
+  }
+
+  /* Personalized greeting banner that appears on home after intake */
+  .applicant-banner {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 16px 24px;
+    margin-bottom: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    border-left: 4px solid var(--gold);
+  }
+
+  .applicant-banner .greeting {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 16px;
+  }
+
+  .applicant-banner .greeting strong {
+    font-style: normal;
+    font-weight: 700;
+    color: var(--gold);
+  }
+
+  .applicant-banner .file-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--cream);
+    opacity: 0.7;
+  }
+
+  .applicant-banner .change-btn {
+    background: transparent;
+    color: var(--paper);
+    border: 1px solid var(--paper);
+    padding: 6px 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  .applicant-banner .change-btn:hover {
+    background: var(--paper);
+    color: var(--ink);
+  }
+
+  /* Officer dialogue bubble in quiz */
+  .officer-aside {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--muted);
+    padding: 12px 16px;
+    background: rgba(10, 49, 97, 0.04);
+    border-left: 3px solid var(--blue);
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+
+  .officer-aside::before {
+    content: 'Officer: ';
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 0.1em;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-right: 6px;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ========== HOME SCREEN ========== */
+  .intro {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 48px;
+  }
+
+  .intro h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    margin-bottom: 20px;
+  }
+
+  .intro h2 em {
+    font-style: italic;
+    color: var(--red);
+    font-weight: 400;
+  }
+
+  .intro p {
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--muted);
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  .rule-line {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    justify-content: center;
+    margin: 32px 0;
+    color: var(--blue);
+  }
+
+  .rule-line::before, .rule-line::after {
+    content: '';
+    height: 1px;
+    background: var(--blue);
+    flex: 0 1 120px;
+    opacity: 0.3;
+  }
+
+  .rule-line .star {
+    font-size: 10px;
+    letter-spacing: 0.5em;
+    color: var(--gold);
+  }
+
+  /* ========== MODE CARDS ========== */
+  .mode-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 48px;
+  }
+
+  .mode-card {
+    background: var(--paper);
+    border: 1px solid var(--ink);
+    padding: 28px 24px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    text-align: left;
+    font-family: inherit;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 200px;
+  }
+
+  .mode-card:hover {
+    background: var(--ink);
+    color: var(--paper);
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--ink);
+  }
+
+  .mode-card:hover .mode-num { color: var(--gold); }
+  .mode-card:hover .mode-meta { color: var(--cream); border-color: var(--cream); }
+
+  .mode-card.featured {
+    background: var(--blue);
+    color: var(--paper);
+    border-color: var(--blue);
+  }
+
+  .mode-card.featured:hover {
+    background: var(--blue-dark);
+    box-shadow: 6px 6px 0 var(--red);
+  }
+  .mode-card.featured .mode-num { color: var(--gold); }
+  .mode-card.featured .mode-meta { color: var(--cream); border-color: rgba(235, 227, 211, 0.3); }
+
+  /* ======= LOCKED & DRILL CARD ======= */
+  .mode-card.locked {
+    cursor: not-allowed;
+    opacity: 0.65;
+    background: var(--cream);
+    border-style: dashed;
+    border-color: var(--muted);
+  }
+  .mode-card.locked:hover {
+    transform: none;
+    box-shadow: none;
+    background: var(--cream);
+    color: var(--ink);
+  }
+  .mode-card.locked .mode-num { color: var(--muted); }
+
+  .lock-progress {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(10, 14, 26, 0.15);
+  }
+
+  .lock-progress-track {
+    height: 6px;
+    background: rgba(10, 14, 26, 0.1);
+    border-radius: 0;
+    overflow: hidden;
+    margin-bottom: 8px;
+    position: relative;
+  }
+
+  .lock-progress-fill {
+    height: 100%;
+    background: var(--ink);
+    transition: width 0.6s ease;
+  }
+
+  .lock-progress-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+  }
+
+  .mode-card.drill-ready {
+    background: var(--red);
+    color: var(--paper);
+    border-color: var(--red);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .mode-card.drill-ready::after {
+    content: '';
+    position: absolute;
+    top: -40%;
+    right: -40%;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .mode-card.drill-ready:hover {
+    background: var(--red-dark);
+    border-color: var(--red-dark);
+    box-shadow: 6px 6px 0 var(--ink);
+  }
+  .mode-card.drill-ready .mode-num { color: var(--gold); }
+  .mode-card.drill-ready .mode-meta { color: var(--cream); border-color: rgba(235, 227, 211, 0.3); }
+
+  .drill-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    background: var(--gold);
+    color: var(--ink);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    font-weight: 700;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+
+  .mode-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    font-weight: 600;
+    color: var(--muted);
+  }
+
+  .mode-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+
+  .mode-desc {
+    font-size: 14px;
+    line-height: 1.55;
+    opacity: 0.85;
+    flex-grow: 1;
+  }
+
+  .mode-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding-top: 12px;
+    border-top: 1px solid var(--muted);
+    color: var(--muted);
+    font-weight: 600;
+  }
+
+  /* ========== CATEGORY BROWSE ========== */
+  .category-list {
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+  }
+
+  .cat-section {
+    padding: 24px 0;
+    border-bottom: 1px dashed rgba(10, 14, 26, 0.2);
+  }
+  .cat-section:last-child { border-bottom: none; }
+
+  .cat-section h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+  }
+
+  .cat-section h3 .num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--red);
+    letter-spacing: 0.1em;
+    font-weight: 600;
+  }
+
+  .cat-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .cat-chip {
+    background: transparent;
+    border: 1px solid var(--ink);
+    padding: 10px 18px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s;
+    color: var(--ink);
+  }
+
+  .cat-chip:hover {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  /* ========== QUIZ VIEW ========== */
+  .quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--ink);
+  }
+
+  .quiz-title-block {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+  }
+
+  .quiz-title-block .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-weight: 600;
+  }
+
+  .quiz-title-block .title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+  }
+
+  .back-btn, .control-btn {
+    background: transparent;
+    border: 1px solid var(--ink);
+    padding: 8px 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.15s;
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .back-btn:hover, .control-btn:hover {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .quiz-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--ink);
+    border: 1px solid var(--ink);
+    margin-bottom: 32px;
+  }
+
+  .stat-cell {
+    background: var(--paper);
+    padding: 14px 18px;
+    text-align: center;
+  }
+
+  .stat-cell .val {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--ink);
+  }
+
+  .stat-cell .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 6px;
+    font-weight: 600;
+  }
+
+  .stat-cell.correct .val { color: var(--success); }
+  .stat-cell.incorrect .val { color: var(--red); }
+
+  .progress-track {
+    height: 4px;
+    background: var(--cream);
+    margin-bottom: 32px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: var(--red);
+    transition: width 0.4s ease;
+    width: 0%;
+  }
+
+  /* ========== QUESTION CARD ========== */
+  .question-card {
+    background: var(--paper);
+    border: 1px solid var(--ink);
+    padding: 40px 48px;
+    margin-bottom: 24px;
+    position: relative;
+    box-shadow: 4px 4px 0 var(--ink);
+  }
+
+  .q-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .q-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-weight: 700;
+  }
+
+  .q-category {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .q-star {
+    color: var(--gold);
+    margin-left: 6px;
+    font-size: 14px;
+  }
+
+  .q-text {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 3.5vw, 32px);
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    margin-bottom: 32px;
+  }
+
+  .answer-area {
+    border-top: 1px dashed var(--border);
+    padding-top: 24px;
+  }
+
+  .answer-area .prompt {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+
+  .answer-input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid var(--ink);
+    padding: 12px 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--ink);
+    outline: none;
+    font-style: italic;
+  }
+
+  .answer-input:focus {
+    border-bottom-color: var(--red);
+  }
+
+  .answer-input::placeholder {
+    color: var(--muted);
+    opacity: 0.6;
+  }
+
+  .answer-reveal {
+    margin-top: 24px;
+    padding: 24px;
+    background: var(--cream);
+    border-left: 4px solid var(--red);
+    display: none;
+  }
+
+  .answer-reveal.show { display: block; animation: fadeIn 0.3s; }
+
+  .answer-reveal .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .answer-reveal ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .answer-reveal li {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 6px 0;
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .answer-reveal li::before {
+    content: '★';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-size: 12px;
+    top: 10px;
+  }
+
+  .answer-reveal .note {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 12px;
+    font-style: italic;
+  }
+
+  .judgment {
+    display: none;
+    margin-top: 20px;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .judgment.show { display: flex; }
+
+  .judge-btn {
+    flex: 1;
+    min-width: 140px;
+    padding: 14px 20px;
+    border: 2px solid var(--ink);
+    background: var(--paper);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s;
+    color: var(--ink);
+  }
+
+  .judge-btn.correct:hover { background: var(--success); color: var(--paper); border-color: var(--success); }
+  .judge-btn.incorrect:hover { background: var(--red); color: var(--paper); border-color: var(--red); }
+
+  /* ========== QUIZ CONTROLS ========== */
+  .quiz-controls {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+  }
+
+  .primary-btn {
+    background: var(--red);
+    color: var(--paper);
+    border: 2px solid var(--red);
+    padding: 14px 32px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .primary-btn:hover {
+    background: var(--red-dark);
+    border-color: var(--red-dark);
+  }
+
+  .primary-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  .secondary-btn {
+    background: transparent;
+    color: var(--ink);
+    border: 2px solid var(--ink);
+    padding: 14px 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .secondary-btn:hover {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  /* ========== RESULTS VIEW ========== */
+  .results-card {
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    padding: 48px;
+    text-align: center;
+    box-shadow: 8px 8px 0 var(--ink);
+    position: relative;
+  }
+
+  .results-card::before {
+    content: '';
+    position: absolute;
+    top: -2px; left: -2px; right: -2px; height: 8px;
+    background: repeating-linear-gradient(
+      90deg,
+      var(--red) 0, var(--red) 24px,
+      var(--paper) 24px, var(--paper) 36px,
+      var(--blue) 36px, var(--blue) 60px,
+      var(--paper) 60px, var(--paper) 72px
+    );
+  }
+
+  .results-verdict {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin: 16px 0 16px;
+    font-weight: 700;
+  }
+
+  .results-score {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(70px, 15vw, 120px);
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 12px;
+    letter-spacing: -0.03em;
+  }
+
+  .results-pass {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 24px;
+    margin-bottom: 32px;
+  }
+
+  .results-pass.pass { color: var(--success); }
+  .results-pass.fail { color: var(--red); }
+
+  .results-meta {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--muted);
+    max-width: 480px;
+    margin: 0 auto 32px;
+  }
+
+  .results-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* ========== REVIEW LIST ========== */
+  .review-list {
+    margin-top: 40px;
+    border-top: 1px solid var(--ink);
+    padding-top: 24px;
+  }
+
+  .review-list h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+
+  .review-item {
+    padding: 16px 0;
+    border-bottom: 1px dashed rgba(10, 14, 26, 0.2);
+    display: grid;
+    grid-template-columns: 60px 1fr auto;
+    gap: 16px;
+    align-items: baseline;
+  }
+
+  .review-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+  }
+
+  .review-q {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .review-result {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .review-result.correct { color: var(--success); }
+  .review-result.incorrect { color: var(--red); }
+
+  /* ========== FOOTER ========== */
+  footer {
+    margin-top: 64px;
+    padding: 32px 24px;
+    border-top: 1px solid var(--ink);
+    background: var(--cream);
+    text-align: center;
+  }
+
+  footer p {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+
+  footer em {
+    font-style: normal;
+    color: var(--red);
+    font-weight: 700;
+  }
+
+  /* ========== RESPONSIVE ========== */
+  @media (max-width: 640px) {
+    .question-card { padding: 24px 20px; }
+    .quiz-stats { grid-template-columns: repeat(2, 1fr); }
+    .masthead-inner { grid-template-columns: auto 1fr; }
+    .date-stamp { display: none; }
+    .results-card { padding: 32px 20px; }
+    .review-item { grid-template-columns: 40px 1fr; }
+    .review-result { grid-column: 2; }
+  }
+</style>
+</head>
+<body>
+
+<div class="seal-bar">
+  <span class="stars">★ ★ ★ ★</span>
+  <span>U.S. Citizenship &amp; Immigration Services · Practice Simulation</span>
+  <span class="stars">★ ★ ★ ★</span>
+</div>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="eagle-seal">
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Stylized eagle/shield -->
+        <path d="M24 6 L30 14 L38 16 L32 22 L34 30 L24 26 L14 30 L16 22 L10 16 L18 14 Z" fill="#0a3161" stroke="#0a0e1a" stroke-width="0.5"/>
+        <rect x="20" y="26" width="8" height="14" fill="#b31942"/>
+        <rect x="20" y="28" width="8" height="1" fill="#f4efe6"/>
+        <rect x="20" y="30" width="8" height="1" fill="#f4efe6"/>
+        <rect x="20" y="32" width="8" height="1" fill="#f4efe6"/>
+        <rect x="20" y="34" width="8" height="1" fill="#f4efe6"/>
+        <rect x="20" y="36" width="8" height="1" fill="#f4efe6"/>
+      </svg>
+    </div>
+    <div class="masthead-title">
+      <h1>The Civics Examination</h1>
+      <div class="subtitle">Form M-1778 · 2025 Version · <em>128 Questions</em> · Interactive Study Simulation</div>
+    </div>
+    <div class="date-stamp">
+      <span>Filed Monday</span>
+      <strong>20 April 2026</strong>
+      <span>Test. Officer on Duty</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ========== INTAKE VIEW (LANDING) ========== -->
+  <section id="intake" class="view active">
+    <div class="intake-wrap">
+      <div class="intake-card">
+        <div class="form-stamp">
+          <span>★ Applicant Intake Form</span>
+          <span class="form-code">N-400 · Practice</span>
+        </div>
+        <h2 class="intake-title">Before we begin, <em>a few formalities.</em></h2>
+        <p class="intake-sub">The naturalization interview begins with identity verification. Please provide the following information as your USCIS officer prepares to administer the civics examination.</p>
+
+        <form id="intakeForm" onsubmit="submitIntake(event)">
+          <div class="field-group">
+            <label class="field-label" for="applicantName">Full Legal Name <span class="req">*</span></label>
+            <input type="text" class="text-field" id="applicantName" placeholder="Your first and last name" autocomplete="name" required maxlength="60">
+            <div class="field-hint">Your name as it appears on your green card (Form I-551).</div>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label" for="applicantCountry">Country of Birth <span class="req">*</span></label>
+            <select class="select-field" id="applicantCountry" required>
+              <option value="" disabled selected>Select your country of birth…</option>
+              <!-- populated by JS -->
+            </select>
+            <div class="field-hint">This helps personalize your practice interview.</div>
+          </div>
+
+          <button type="submit" class="intake-submit">★ Begin Examination</button>
+        </form>
+
+        <div class="intake-footnote">
+          This information is stored <strong style="color: var(--ink);">only in your browser</strong> for this session.<br>Nothing is sent to a server.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HOME VIEW ========== -->
+  <section id="home" class="view">
+    <div class="applicant-banner" id="applicantBanner">
+      <div>
+        <div class="greeting" id="applicantGreeting"><!-- injected --></div>
+        <div class="file-num" id="applicantFile"><!-- injected --></div>
+      </div>
+      <button class="change-btn" onclick="resetApplicant()">Change Info</button>
+    </div>
+
+    <div class="intro">
+      <h2 id="homeHeadline">Select a <em>study mode</em> to begin.</h2>
+      <p id="homeSubtext">This practice tool simulates the oral civics test administered during your naturalization interview. All answers current as of <strong>April 2026</strong>.</p>
+    </div>
+
+    <div class="rule-line">
+      <span class="star">★ ★ ★</span>
+    </div>
+
+    <div class="mode-grid">
+      <button class="mode-card featured" onclick="startMode('mock')">
+        <span class="mode-num">/ 01 · RECOMMENDED</span>
+        <span class="mode-title">Official Mock Test</span>
+        <span class="mode-desc">Twenty randomly-selected questions. Answer at least twelve correctly to pass, just like the real interview.</span>
+        <span class="mode-meta">20 questions · ~10 min</span>
+      </button>
+
+      <button class="mode-card" onclick="startMode('senior')">
+        <span class="mode-num">/ 02</span>
+        <span class="mode-title">65/20 Special Consideration</span>
+        <span class="mode-desc">For applicants 65+ who have been permanent residents for 20+ years. Ten of the twenty marked questions; pass with six correct.</span>
+        <span class="mode-meta">10 questions · Starred only</span>
+      </button>
+
+      <button class="mode-card" onclick="startMode('full')">
+        <span class="mode-num">/ 03</span>
+        <span class="mode-title">Complete Study Mode</span>
+        <span class="mode-desc">All 128 questions, sequentially, no scoring pressure. Reveal answers at your own pace for thorough preparation.</span>
+        <span class="mode-meta">128 questions · Self-paced</span>
+      </button>
+
+      <button class="mode-card" onclick="showView('categories')">
+        <span class="mode-num">/ 04</span>
+        <span class="mode-title">Browse by Category</span>
+        <span class="mode-desc">Drill into a specific topic: American Government, History, or Symbols &amp; Holidays. Focus where you need work most.</span>
+        <span class="mode-meta">Seven sub-categories</span>
+      </button>
+
+      <button class="mode-card locked" id="drillCard" onclick="handleDrillClick()">
+        <span class="mode-num" id="drillNum">/ 05 · LOCKED</span>
+        <span class="mode-title" id="drillTitle">Weakness Drill</span>
+        <span class="mode-desc" id="drillDesc">Unlocks after you complete three full-length mock tests. Then drills you on every question you've missed, until you master each one.</span>
+        <span class="mode-meta" id="drillMeta">Complete 3 mock tests to unlock</span>
+        <div class="lock-progress" id="lockProgress">
+          <div class="lock-progress-track">
+            <div class="lock-progress-fill" id="lockFill" style="width: 0%"></div>
+          </div>
+          <div class="lock-progress-label" id="lockLabel">0 / 3 tests complete</div>
+        </div>
+      </button>
+    </div>
+  </section>
+
+  <!-- ========== CATEGORY VIEW ========== -->
+  <section id="categories" class="view">
+    <div class="quiz-header">
+      <div class="quiz-title-block">
+        <span class="label">/ Browse</span>
+        <span class="title">Study by Category</span>
+      </div>
+      <button class="back-btn" onclick="showView('home')">← Back</button>
+    </div>
+
+    <div class="category-list" id="categoryList"><!-- injected --></div>
+  </section>
+
+  <!-- ========== QUIZ VIEW ========== -->
+  <section id="quiz" class="view">
+    <div class="quiz-header">
+      <div class="quiz-title-block">
+        <span class="label" id="quizLabel">/ Examination</span>
+        <span class="title" id="quizTitle">Mock Test</span>
+      </div>
+      <button class="back-btn" onclick="exitQuiz()">Exit</button>
+    </div>
+
+    <div class="quiz-stats">
+      <div class="stat-cell">
+        <div class="val" id="statPosition">1/20</div>
+        <div class="label">Question</div>
+      </div>
+      <div class="stat-cell correct">
+        <div class="val" id="statCorrect">0</div>
+        <div class="label">Correct</div>
+      </div>
+      <div class="stat-cell incorrect">
+        <div class="val" id="statIncorrect">0</div>
+        <div class="label">Incorrect</div>
+      </div>
+      <div class="stat-cell">
+        <div class="val" id="statRemaining">20</div>
+        <div class="label">Remaining</div>
+      </div>
+    </div>
+
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+
+    <div class="question-card" id="questionCard"><!-- injected --></div>
+
+    <div class="quiz-controls">
+      <button class="secondary-btn" id="revealBtn" onclick="revealAnswer()">Reveal Answer</button>
+      <button class="primary-btn" id="nextBtn" onclick="nextQuestion()" disabled>Next Question →</button>
+    </div>
+  </section>
+
+  <!-- ========== RESULTS VIEW ========== -->
+  <section id="results" class="view">
+    <div class="results-card">
+      <div class="results-verdict" id="resultsVerdict">Examination Complete</div>
+      <div class="results-score" id="resultsScore">0/20</div>
+      <div class="results-pass" id="resultsPass">—</div>
+      <div class="results-meta" id="resultsMeta">—</div>
+      <div class="results-actions">
+        <button class="primary-btn" onclick="restartSameMode()">Try Again</button>
+        <button class="secondary-btn" onclick="showView('home')">Home</button>
+      </div>
+    </div>
+
+    <div class="review-list" id="reviewList">
+      <h3>Question Review</h3>
+      <div id="reviewItems"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>
+    Source material: USCIS Form <em>M-1778</em> (09/25) · 2025 Civics Test · 128 Questions &amp; Answers<br>
+    Current officials verified April 2026. Named officeholders may change — always verify at uscis.gov/citizenship/testupdates before your interview.<br>
+    This is an <em>unofficial study tool</em> and is not affiliated with USCIS or the U.S. government.
+  </p>
+</footer>
+
+<script>
+/* ====================================================================
+   CIVICS TEST DATA — ALL 128 QUESTIONS
+   Fields: n (number), q (question), a (answer array), star (boolean),
+   cat (category), sub (subcategory), note (optional note)
+   ==================================================================== */
+
+// Current officials (April 2026) — used for the "answers will vary" questions
+const CURRENT = {
+  president: "Donald J. Trump",
+  vicePresident: "JD Vance (James David Vance)",
+  speaker: "Mike Johnson",
+  chiefJustice: "John G. Roberts, Jr."
+};
+
+const QUESTIONS = [
+  // ===== A: Principles of American Government =====
+  { n: 1, q: "What is the form of government of the United States?", a: ["Republic", "Constitution-based federal republic", "Representative democracy"], star: false, cat: "Government", sub: "Principles" },
+  { n: 2, q: "What is the supreme law of the land?", a: ["(U.S.) Constitution"], star: true, cat: "Government", sub: "Principles" },
+  { n: 3, q: "Name one thing the U.S. Constitution does.", a: ["Forms the government", "Defines powers of government", "Defines the parts of government", "Protects the rights of the people"], star: false, cat: "Government", sub: "Principles" },
+  { n: 4, q: "The U.S. Constitution starts with the words \"We the People.\" What does \"We the People\" mean?", a: ["Self-government", "Popular sovereignty", "Consent of the governed", "People should govern themselves", "(Example of) social contract"], star: false, cat: "Government", sub: "Principles" },
+  { n: 5, q: "How are changes made to the U.S. Constitution?", a: ["Amendments", "The amendment process"], star: false, cat: "Government", sub: "Principles" },
+  { n: 6, q: "What does the Bill of Rights protect?", a: ["(The basic) rights of Americans", "(The basic) rights of people living in the United States"], star: false, cat: "Government", sub: "Principles" },
+  { n: 7, q: "How many amendments does the U.S. Constitution have?", a: ["Twenty-seven (27)"], star: true, cat: "Government", sub: "Principles" },
+  { n: 8, q: "Why is the Declaration of Independence important?", a: ["It says America is free from British control.", "It says all people are created equal.", "It identifies inherent rights.", "It identifies individual freedoms."], star: false, cat: "Government", sub: "Principles" },
+  { n: 9, q: "What founding document said the American colonies were free from Britain?", a: ["Declaration of Independence"], star: false, cat: "Government", sub: "Principles" },
+  { n: 10, q: "Name two important ideas from the Declaration of Independence and the U.S. Constitution.", a: ["Equality", "Liberty", "Social contract", "Natural rights", "Limited government", "Self-government"], star: false, cat: "Government", sub: "Principles" },
+  { n: 11, q: "The words \"Life, Liberty, and the pursuit of Happiness\" are in what founding document?", a: ["Declaration of Independence"], star: false, cat: "Government", sub: "Principles" },
+  { n: 12, q: "What is the economic system of the United States?", a: ["Capitalism", "Free market economy"], star: true, cat: "Government", sub: "Principles" },
+  { n: 13, q: "What is the rule of law?", a: ["Everyone must follow the law.", "Leaders must obey the law.", "Government must obey the law.", "No one is above the law."], star: false, cat: "Government", sub: "Principles" },
+  { n: 14, q: "Many documents influenced the U.S. Constitution. Name one.", a: ["Declaration of Independence", "Articles of Confederation", "Federalist Papers", "Anti-Federalist Papers", "Virginia Declaration of Rights", "Fundamental Orders of Connecticut", "Mayflower Compact", "Iroquois Great Law of Peace"], star: false, cat: "Government", sub: "Principles" },
+  { n: 15, q: "There are three branches of government. Why?", a: ["So one part does not become too powerful", "Checks and balances", "Separation of powers"], star: false, cat: "Government", sub: "Principles" },
+
+  // ===== B: System of Government =====
+  { n: 16, q: "Name the three branches of government.", a: ["Legislative, executive, and judicial", "Congress, president, and the courts"], star: false, cat: "Government", sub: "System" },
+  { n: 17, q: "The President of the United States is in charge of which branch of government?", a: ["Executive branch"], star: false, cat: "Government", sub: "System" },
+  { n: 18, q: "What part of the federal government writes laws?", a: ["(U.S.) Congress", "(U.S. or national) legislature", "Legislative branch"], star: false, cat: "Government", sub: "System" },
+  { n: 19, q: "What are the two parts of the U.S. Congress?", a: ["Senate and House (of Representatives)"], star: false, cat: "Government", sub: "System" },
+  { n: 20, q: "Name one power of the U.S. Congress.", a: ["Writes laws", "Declares war", "Makes the federal budget"], star: true, cat: "Government", sub: "System" },
+  { n: 21, q: "How many U.S. senators are there?", a: ["One hundred (100)"], star: false, cat: "Government", sub: "System" },
+  { n: 22, q: "How long is a term for a U.S. senator?", a: ["Six (6) years"], star: false, cat: "Government", sub: "System" },
+  { n: 23, q: "Who is one of your state's U.S. senators now?", a: ["Answers vary by state — check senate.gov for your current senators.", "D.C. and U.S. territory residents: answer that they have no U.S. senators."], star: false, cat: "Government", sub: "System", note: "This answer depends on your state of residence." },
+  { n: 24, q: "How many voting members are in the House of Representatives?", a: ["Four hundred thirty-five (435)"], star: false, cat: "Government", sub: "System" },
+  { n: 25, q: "How long is a term for a member of the House of Representatives?", a: ["Two (2) years"], star: false, cat: "Government", sub: "System" },
+  { n: 26, q: "Why do U.S. representatives serve shorter terms than U.S. senators?", a: ["To more closely follow public opinion"], star: false, cat: "Government", sub: "System" },
+  { n: 27, q: "How many senators does each state have?", a: ["Two (2)"], star: false, cat: "Government", sub: "System" },
+  { n: 28, q: "Why does each state have two senators?", a: ["Equal representation (for small states)", "The Great Compromise (Connecticut Compromise)"], star: false, cat: "Government", sub: "System" },
+  { n: 29, q: "Name your U.S. representative.", a: ["Answers vary by congressional district — look up yours at house.gov.", "Territory residents may name their Delegate or Resident Commissioner, or state that their territory has no voting representatives."], star: false, cat: "Government", sub: "System", note: "This answer depends on your congressional district." },
+  { n: 30, q: "What is the name of the Speaker of the House of Representatives now?", a: [CURRENT.speaker], star: true, cat: "Government", sub: "System", note: "Current as of April 2026. Verify at uscis.gov/citizenship/testupdates." },
+  { n: 31, q: "Who does a U.S. senator represent?", a: ["Citizens of their state", "People of their state"], star: false, cat: "Government", sub: "System" },
+  { n: 32, q: "Who elects U.S. senators?", a: ["Citizens from their state"], star: false, cat: "Government", sub: "System" },
+  { n: 33, q: "Who does a member of the House of Representatives represent?", a: ["Citizens in their (congressional) district", "Citizens in their district", "People from their (congressional) district", "People in their district"], star: false, cat: "Government", sub: "System" },
+  { n: 34, q: "Who elects members of the House of Representatives?", a: ["Citizens from their (congressional) district"], star: false, cat: "Government", sub: "System" },
+  { n: 35, q: "Some states have more representatives than other states. Why?", a: ["(Because of) the state's population", "(Because) they have more people", "(Because) some states have more people"], star: false, cat: "Government", sub: "System" },
+  { n: 36, q: "The President of the United States is elected for how many years?", a: ["Four (4) years"], star: true, cat: "Government", sub: "System" },
+  { n: 37, q: "The President of the United States can serve only two terms. Why?", a: ["(Because of) the 22nd Amendment", "To keep the president from becoming too powerful"], star: false, cat: "Government", sub: "System" },
+  { n: 38, q: "What is the name of the President of the United States now?", a: [CURRENT.president], star: true, cat: "Government", sub: "System", note: "Current as of April 2026. Verify at uscis.gov/citizenship/testupdates." },
+  { n: 39, q: "What is the name of the Vice President of the United States now?", a: [CURRENT.vicePresident], star: true, cat: "Government", sub: "System", note: "Current as of April 2026. Verify at uscis.gov/citizenship/testupdates." },
+  { n: 40, q: "If the president can no longer serve, who becomes president?", a: ["The Vice President (of the United States)"], star: false, cat: "Government", sub: "System" },
+  { n: 41, q: "Name one power of the president.", a: ["Signs bills into law", "Vetoes bills", "Enforces laws", "Commander in Chief (of the military)", "Chief diplomat", "Appoints federal judges"], star: false, cat: "Government", sub: "System" },
+  { n: 42, q: "Who is Commander in Chief of the U.S. military?", a: ["The President (of the United States)"], star: false, cat: "Government", sub: "System" },
+  { n: 43, q: "Who signs bills to become laws?", a: ["The President (of the United States)"], star: false, cat: "Government", sub: "System" },
+  { n: 44, q: "Who vetoes bills?", a: ["The President (of the United States)"], star: true, cat: "Government", sub: "System" },
+  { n: 45, q: "Who appoints federal judges?", a: ["The President (of the United States)"], star: false, cat: "Government", sub: "System" },
+  { n: 46, q: "The executive branch has many parts. Name one.", a: ["President (of the United States)", "Cabinet", "Federal departments and agencies"], star: false, cat: "Government", sub: "System" },
+  { n: 47, q: "What does the President's Cabinet do?", a: ["Advises the President (of the United States)"], star: false, cat: "Government", sub: "System" },
+  { n: 48, q: "What are two Cabinet-level positions?", a: ["Attorney General", "Secretary of Agriculture", "Secretary of Commerce", "Secretary of Education", "Secretary of Energy", "Secretary of Health and Human Services", "Secretary of Homeland Security", "Secretary of Housing and Urban Development", "Secretary of the Interior", "Secretary of Labor", "Secretary of State", "Secretary of Transportation", "Secretary of the Treasury", "Secretary of Veterans Affairs", "Secretary of War (Defense)", "Vice-President"], star: false, cat: "Government", sub: "System" },
+  { n: 49, q: "Why is the Electoral College important?", a: ["It decides who is elected president.", "It provides a compromise between the popular election of the president and congressional selection."], star: false, cat: "Government", sub: "System" },
+  { n: 50, q: "What is one part of the judicial branch?", a: ["Supreme Court", "Federal Courts"], star: false, cat: "Government", sub: "System" },
+  { n: 51, q: "What does the judicial branch do?", a: ["Reviews laws", "Explains laws", "Resolves disputes (disagreements) about the law", "Decides if a law goes against the (U.S.) Constitution"], star: false, cat: "Government", sub: "System" },
+  { n: 52, q: "What is the highest court in the United States?", a: ["Supreme Court"], star: true, cat: "Government", sub: "System" },
+  { n: 53, q: "How many seats are on the Supreme Court?", a: ["Nine (9)"], star: false, cat: "Government", sub: "System" },
+  { n: 54, q: "How many Supreme Court justices are usually needed to decide a case?", a: ["Five (5)"], star: false, cat: "Government", sub: "System" },
+  { n: 55, q: "How long do Supreme Court justices serve?", a: ["(For) life", "Lifetime appointment", "(Until) retirement"], star: false, cat: "Government", sub: "System" },
+  { n: 56, q: "Supreme Court justices serve for life. Why?", a: ["To be independent (of politics)", "To limit outside (political) influence"], star: false, cat: "Government", sub: "System" },
+  { n: 57, q: "Who is the Chief Justice of the United States now?", a: [CURRENT.chiefJustice], star: false, cat: "Government", sub: "System", note: "Current as of April 2026. Verify at uscis.gov/citizenship/testupdates." },
+  { n: 58, q: "Name one power that is only for the federal government.", a: ["Print paper money", "Mint coins", "Declare war", "Create an army", "Make treaties", "Set foreign policy"], star: false, cat: "Government", sub: "System" },
+  { n: 59, q: "Name one power that is only for the states.", a: ["Provide schooling and education", "Provide protection (police)", "Provide safety (fire departments)", "Give a driver's license", "Approve zoning and land use"], star: false, cat: "Government", sub: "System" },
+  { n: 60, q: "What is the purpose of the 10th Amendment?", a: ["(It states that the) powers not given to the federal government belong to the states or to the people."], star: false, cat: "Government", sub: "System" },
+  { n: 61, q: "Who is the governor of your state now?", a: ["Answers vary by state — check your state's official government website.", "D.C. residents: answer that D.C. does not have a governor."], star: true, cat: "Government", sub: "System", note: "This answer depends on your state of residence." },
+  { n: 62, q: "What is the capital of your state?", a: ["Answers vary by state.", "D.C. residents: answer that D.C. is not a state and does not have a capital.", "Territory residents: name the capital of the territory."], star: false, cat: "Government", sub: "System", note: "This answer depends on your state of residence." },
+
+  // ===== C: Rights and Responsibilities =====
+  { n: 63, q: "There are four amendments to the U.S. Constitution about who can vote. Describe one of them.", a: ["Citizens eighteen (18) and older (can vote).", "You don't have to pay (a poll tax) to vote.", "Any citizen can vote. (Women and men can vote.)", "A male citizen of any race (can vote)."], star: false, cat: "Government", sub: "Rights" },
+  { n: 64, q: "Who can vote in federal elections, run for federal office, and serve on a jury in the United States?", a: ["Citizens", "Citizens of the United States", "U.S. citizens"], star: false, cat: "Government", sub: "Rights" },
+  { n: 65, q: "What are three rights of everyone living in the United States?", a: ["Freedom of expression", "Freedom of speech", "Freedom of assembly", "Freedom to petition the government", "Freedom of religion", "The right to bear arms"], star: false, cat: "Government", sub: "Rights" },
+  { n: 66, q: "What do we show loyalty to when we say the Pledge of Allegiance?", a: ["The United States", "The flag"], star: true, cat: "Government", sub: "Rights" },
+  { n: 67, q: "Name two promises that new citizens make in the Oath of Allegiance.", a: ["Give up loyalty to other countries", "Defend the (U.S.) Constitution", "Obey the laws of the United States", "Serve in the military (if needed)", "Serve (help, do important work for) the nation (if needed)", "Be loyal to the United States"], star: false, cat: "Government", sub: "Rights" },
+  { n: 68, q: "How can people become United States citizens?", a: ["Be born in the United States, under the conditions set by the 14th Amendment", "Naturalize", "Derive citizenship (under conditions set by Congress)"], star: false, cat: "Government", sub: "Rights" },
+  { n: 69, q: "What are two examples of civic participation in the United States?", a: ["Vote", "Run for office", "Join a political party", "Help with a campaign", "Join a civic group", "Join a community group", "Give an elected official your opinion (on an issue)", "Contact elected officials", "Support or oppose an issue or policy", "Write to a newspaper"], star: false, cat: "Government", sub: "Rights" },
+  { n: 70, q: "What is one way Americans can serve their country?", a: ["Vote", "Pay taxes", "Obey the law", "Serve in the military", "Run for office", "Work for local, state, or federal government"], star: false, cat: "Government", sub: "Rights" },
+  { n: 71, q: "Why is it important to pay federal taxes?", a: ["Required by law", "All people pay to fund the federal government", "Required by the (U.S.) Constitution (16th Amendment)", "Civic duty"], star: false, cat: "Government", sub: "Rights" },
+  { n: 72, q: "It is important for all men age 18 through 25 to register for the Selective Service. Name one reason why.", a: ["Required by law", "Civic duty", "Makes the draft fair, if needed"], star: false, cat: "Government", sub: "Rights" },
+
+  // ===== History A: Colonial Period and Independence =====
+  { n: 73, q: "The colonists came to America for many reasons. Name one.", a: ["Freedom", "Political liberty", "Religious freedom", "Economic opportunity", "Escape persecution"], star: false, cat: "History", sub: "Colonial" },
+  { n: 74, q: "Who lived in America before the Europeans arrived?", a: ["American Indians", "Native Americans"], star: true, cat: "History", sub: "Colonial" },
+  { n: 75, q: "What group of people was taken and sold as slaves?", a: ["Africans", "People from Africa"], star: false, cat: "History", sub: "Colonial" },
+  { n: 76, q: "What war did the Americans fight to win independence from Britain?", a: ["American Revolution", "The (American) Revolutionary War", "War for (American) Independence"], star: false, cat: "History", sub: "Colonial" },
+  { n: 77, q: "Name one reason why the Americans declared independence from Britain.", a: ["High taxes", "Taxation without representation", "British soldiers stayed in Americans' houses (boarding, quartering)", "They did not have self-government", "Boston Massacre", "Boston Tea Party (Tea Act)", "Stamp Act", "Sugar Act", "Townshend Acts", "Intolerable (Coercive) Acts"], star: false, cat: "History", sub: "Colonial" },
+  { n: 78, q: "Who wrote the Declaration of Independence?", a: ["(Thomas) Jefferson"], star: true, cat: "History", sub: "Colonial" },
+  { n: 79, q: "When was the Declaration of Independence adopted?", a: ["July 4, 1776"], star: false, cat: "History", sub: "Colonial" },
+  { n: 80, q: "The American Revolution had many important events. Name one.", a: ["(Battle of) Bunker Hill", "Declaration of Independence", "Washington Crossing the Delaware (Battle of Trenton)", "(Battle of) Saratoga", "Valley Forge (Encampment)", "(Battle of) Yorktown (British surrender at Yorktown)"], star: false, cat: "History", sub: "Colonial" },
+  { n: 81, q: "There were 13 original states. Name five.", a: ["New Hampshire, Massachusetts, Rhode Island, Connecticut, New York, New Jersey, Pennsylvania, Delaware, Maryland, Virginia, North Carolina, South Carolina, Georgia"], star: false, cat: "History", sub: "Colonial" },
+  { n: 82, q: "What founding document was written in 1787?", a: ["(U.S.) Constitution"], star: false, cat: "History", sub: "Colonial" },
+  { n: 83, q: "The Federalist Papers supported the passage of the U.S. Constitution. Name one of the writers.", a: ["(James) Madison", "(Alexander) Hamilton", "(John) Jay", "Publius"], star: false, cat: "History", sub: "Colonial" },
+  { n: 84, q: "Why were the Federalist Papers important?", a: ["They helped people understand the (U.S.) Constitution.", "They supported passing the (U.S.) Constitution."], star: false, cat: "History", sub: "Colonial" },
+  { n: 85, q: "Benjamin Franklin is famous for many things. Name one.", a: ["Founded the first free public libraries", "First Postmaster General of the United States", "Helped write the Declaration of Independence", "Inventor", "U.S. diplomat"], star: false, cat: "History", sub: "Colonial" },
+  { n: 86, q: "George Washington is famous for many things. Name one.", a: ["\"Father of Our Country\"", "First president of the United States", "General of the Continental Army", "President of the Constitutional Convention"], star: true, cat: "History", sub: "Colonial" },
+  { n: 87, q: "Thomas Jefferson is famous for many things. Name one.", a: ["Writer of the Declaration of Independence", "Third president of the United States", "Doubled the size of the United States (Louisiana Purchase)", "First Secretary of State", "Founded the University of Virginia", "Writer of the Virginia Statute on Religious Freedom"], star: false, cat: "History", sub: "Colonial" },
+  { n: 88, q: "James Madison is famous for many things. Name one.", a: ["\"Father of the Constitution\"", "Fourth president of the United States", "President during the War of 1812", "One of the writers of the Federalist Papers"], star: false, cat: "History", sub: "Colonial" },
+  { n: 89, q: "Alexander Hamilton is famous for many things. Name one.", a: ["First Secretary of the Treasury", "One of the writers of the Federalist Papers", "Helped establish the First Bank of the United States", "Aide to General George Washington", "Member of the Continental Congress"], star: false, cat: "History", sub: "Colonial" },
+
+  // ===== History B: 1800s =====
+  { n: 90, q: "What territory did the United States buy from France in 1803?", a: ["Louisiana Territory", "Louisiana"], star: false, cat: "History", sub: "1800s" },
+  { n: 91, q: "Name one war fought by the United States in the 1800s.", a: ["War of 1812", "Mexican-American War", "Civil War", "Spanish-American War"], star: false, cat: "History", sub: "1800s" },
+  { n: 92, q: "Name the U.S. war between the North and the South.", a: ["The Civil War"], star: false, cat: "History", sub: "1800s" },
+  { n: 93, q: "The Civil War had many important events. Name one.", a: ["(Battle of) Fort Sumter", "Emancipation Proclamation", "(Battle of) Vicksburg", "(Battle of) Gettysburg", "Sherman's March", "(Surrender at) Appomattox", "(Battle of) Antietam/Sharpsburg", "Lincoln was assassinated."], star: false, cat: "History", sub: "1800s" },
+  { n: 94, q: "Abraham Lincoln is famous for many things. Name one.", a: ["Freed the slaves (Emancipation Proclamation)", "Saved (or preserved) the Union", "Led the United States during the Civil War", "16th president of the United States", "Delivered the Gettysburg Address"], star: true, cat: "History", sub: "1800s" },
+  { n: 95, q: "What did the Emancipation Proclamation do?", a: ["Freed the slaves", "Freed slaves in the Confederacy", "Freed slaves in the Confederate states", "Freed slaves in most Southern states"], star: false, cat: "History", sub: "1800s" },
+  { n: 96, q: "What U.S. war ended slavery?", a: ["The Civil War"], star: false, cat: "History", sub: "1800s" },
+  { n: 97, q: "What amendment says all persons born or naturalized in the United States, and subject to the jurisdiction thereof, are U.S. citizens?", a: ["14th Amendment"], star: false, cat: "History", sub: "1800s" },
+  { n: 98, q: "When did all men get the right to vote?", a: ["After the Civil War", "During Reconstruction", "(With the) 15th Amendment", "1870"], star: false, cat: "History", sub: "1800s" },
+  { n: 99, q: "Name one leader of the women's rights movement in the 1800s.", a: ["Susan B. Anthony", "Elizabeth Cady Stanton", "Sojourner Truth", "Harriet Tubman", "Lucretia Mott", "Lucy Stone"], star: false, cat: "History", sub: "1800s" },
+
+  // ===== History C: Recent History =====
+  { n: 100, q: "Name one war fought by the United States in the 1900s.", a: ["World War I", "World War II", "Korean War", "Vietnam War", "(Persian) Gulf War"], star: false, cat: "History", sub: "Recent" },
+  { n: 101, q: "Why did the United States enter World War I?", a: ["Because Germany attacked U.S. (civilian) ships", "To support the Allied Powers (England, France, Italy, and Russia)", "To oppose the Central Powers (Germany, Austria-Hungary, the Ottoman Empire, and Bulgaria)"], star: false, cat: "History", sub: "Recent" },
+  { n: 102, q: "When did all women get the right to vote?", a: ["1920", "After World War I", "(With the) 19th Amendment"], star: false, cat: "History", sub: "Recent" },
+  { n: 103, q: "What was the Great Depression?", a: ["Longest economic recession in modern history"], star: false, cat: "History", sub: "Recent" },
+  { n: 104, q: "When did the Great Depression start?", a: ["The Great Crash (1929)", "Stock market crash of 1929"], star: false, cat: "History", sub: "Recent" },
+  { n: 105, q: "Who was president during the Great Depression and World War II?", a: ["(Franklin) Roosevelt"], star: false, cat: "History", sub: "Recent" },
+  { n: 106, q: "Why did the United States enter World War II?", a: ["(Bombing of) Pearl Harbor", "Japanese attacked Pearl Harbor", "To support the Allied Powers (England, France, and Russia)", "To oppose the Axis Powers (Germany, Italy, and Japan)"], star: false, cat: "History", sub: "Recent" },
+  { n: 107, q: "Dwight Eisenhower is famous for many things. Name one.", a: ["General during World War II", "President at the end of (during) the Korean War", "34th president of the United States", "Signed the Federal-Aid Highway Act of 1956 (Created the Interstate System)"], star: false, cat: "History", sub: "Recent" },
+  { n: 108, q: "Who was the United States' main rival during the Cold War?", a: ["Soviet Union", "USSR", "Russia"], star: false, cat: "History", sub: "Recent" },
+  { n: 109, q: "During the Cold War, what was one main concern of the United States?", a: ["Communism", "Nuclear war"], star: false, cat: "History", sub: "Recent" },
+  { n: 110, q: "Why did the United States enter the Korean War?", a: ["To stop the spread of communism"], star: false, cat: "History", sub: "Recent" },
+  { n: 111, q: "Why did the United States enter the Vietnam War?", a: ["To stop the spread of communism"], star: false, cat: "History", sub: "Recent" },
+  { n: 112, q: "What did the civil rights movement do?", a: ["Fought to end racial discrimination"], star: false, cat: "History", sub: "Recent" },
+  { n: 113, q: "Martin Luther King, Jr. is famous for many things. Name one.", a: ["Fought for civil rights", "Worked for equality for all Americans", "Worked to ensure that people would \"not be judged by the color of their skin, but by the content of their character\""], star: true, cat: "History", sub: "Recent" },
+  { n: 114, q: "Why did the United States enter the Persian Gulf War?", a: ["To force the Iraqi military from Kuwait"], star: false, cat: "History", sub: "Recent" },
+  { n: 115, q: "What major event happened on September 11, 2001 in the United States?", a: ["Terrorists attacked the United States", "Terrorists took over two planes and crashed them into the World Trade Center in New York City", "Terrorists took over a plane and crashed into the Pentagon in Arlington, Virginia", "Terrorists took over a plane originally aimed at Washington, D.C., and crashed in a field in Pennsylvania"], star: true, cat: "History", sub: "Recent" },
+  { n: 116, q: "Name one U.S. military conflict after the September 11, 2001 attacks.", a: ["(Global) War on Terror", "War in Afghanistan", "War in Iraq"], star: false, cat: "History", sub: "Recent" },
+  { n: 117, q: "Name one American Indian tribe in the United States.", a: ["Apache", "Blackfeet", "Cayuga", "Cherokee", "Cheyenne", "Chippewa", "Choctaw", "Creek", "Crow", "Hopi", "Huron", "Inupiat", "Lakota", "Mohawk", "Mohegan", "Navajo", "Oneida", "Onondaga", "Pueblo", "Seminole", "Seneca", "Shawnee", "Sioux", "Teton", "Tuscarora"], star: false, cat: "History", sub: "Recent" },
+  { n: 118, q: "Name one example of an American innovation.", a: ["Light bulb", "Automobile (cars, internal combustion engine)", "Skyscrapers", "Airplane", "Assembly line", "Landing on the moon", "Integrated circuit (IC)"], star: false, cat: "History", sub: "Recent" },
+
+  // ===== Symbols =====
+  { n: 119, q: "What is the capital of the United States?", a: ["Washington, D.C."], star: false, cat: "Symbols", sub: "Symbols" },
+  { n: 120, q: "Where is the Statue of Liberty?", a: ["New York (Harbor)", "Liberty Island", "New Jersey, near New York City", "On the Hudson (River)"], star: false, cat: "Symbols", sub: "Symbols" },
+  { n: 121, q: "Why does the flag have 13 stripes?", a: ["(Because there were) 13 original colonies", "(Because the stripes) represent the original colonies"], star: true, cat: "Symbols", sub: "Symbols" },
+  { n: 122, q: "Why does the flag have 50 stars?", a: ["(Because there is) one star for each state", "(Because) each star represents a state", "(Because there are) 50 states"], star: false, cat: "Symbols", sub: "Symbols" },
+  { n: 123, q: "What is the name of the national anthem?", a: ["The Star-Spangled Banner"], star: false, cat: "Symbols", sub: "Symbols" },
+  { n: 124, q: "The Nation's first motto was \"E Pluribus Unum.\" What does that mean?", a: ["Out of many, one", "We all become one"], star: false, cat: "Symbols", sub: "Symbols" },
+
+  // ===== Holidays =====
+  { n: 125, q: "What is Independence Day?", a: ["A holiday to celebrate U.S. independence (from Britain)", "The country's birthday"], star: false, cat: "Symbols", sub: "Holidays" },
+  { n: 126, q: "Name three national U.S. holidays.", a: ["New Year's Day", "Martin Luther King, Jr. Day", "Presidents Day (Washington's Birthday)", "Memorial Day", "Juneteenth", "Independence Day", "Labor Day", "Columbus Day", "Veterans Day", "Thanksgiving Day", "Christmas Day"], star: true, cat: "Symbols", sub: "Holidays" },
+  { n: 127, q: "What is Memorial Day?", a: ["A holiday to honor soldiers who died in military service"], star: false, cat: "Symbols", sub: "Holidays" },
+  { n: 128, q: "What is Veterans Day?", a: ["A holiday to honor people in the (U.S.) military", "A holiday to honor people who have served (in the U.S. military)"], star: false, cat: "Symbols", sub: "Holidays" }
+];
+
+/* ====================================================================
+   STATE MANAGEMENT
+   ==================================================================== */
+let state = {
+  mode: null,        // 'mock' | 'senior' | 'full' | 'category' | 'drill'
+  questions: [],     // active question set
+  idx: 0,
+  correct: 0,
+  incorrect: 0,
+  answers: [],       // {n, q, result: 'correct'|'incorrect'|'skipped'}
+  passingScore: 0,   // min correct to pass
+  revealed: false,
+  userAnswer: '',
+  applicant: {
+    fullName: '',
+    firstName: '',
+    country: '',
+    fileNum: '',
+    startedAt: null
+  },
+  // progress data — persists per applicant
+  progress: {
+    mockTestsCompleted: 0,    // count of finished mock OR senior tests
+    missed: {},               // { [questionNum]: timesMissedSinceMastered }
+    graduated: {}             // { [questionNum]: true } — mastered in drill
+  }
+};
+
+/* ====================================================================
+   PERSISTENCE — per applicant, keyed by name+country
+   ==================================================================== */
+function progressKey() {
+  const app = state.applicant;
+  if (!app.fullName) return null;
+  // Sanitize: storage keys can't contain whitespace, slashes, or quotes
+  const safe = (app.fullName + '|' + app.country)
+    .replace(/\s+/g, '_')
+    .replace(/[\/\\'"]/g, '');
+  return `progress:${safe}`;
+}
+
+async function loadProgress() {
+  const key = progressKey();
+  if (!key) return;
+  try {
+    const result = await window.storage.get(key);
+    if (result && result.value) {
+      const saved = JSON.parse(result.value);
+      state.progress = {
+        mockTestsCompleted: saved.mockTestsCompleted || 0,
+        missed: saved.missed || {},
+        graduated: saved.graduated || {}
+      };
+    }
+  } catch (err) {
+    // key doesn't exist yet — that's fine, keep defaults
+  }
+}
+
+async function saveProgress() {
+  const key = progressKey();
+  if (!key) return;
+  try {
+    await window.storage.set(key, JSON.stringify(state.progress));
+  } catch (err) {
+    console.warn('Could not save progress:', err);
+  }
+}
+
+function countMissedQuestions() {
+  // Questions currently in drill pool — missed and not yet graduated
+  return Object.keys(state.progress.missed).filter(
+    n => !state.progress.graduated[n]
+  ).length;
+}
+
+/* ====================================================================
+   COUNTRY LIST — top countries of origin for U.S. naturalized citizens
+   (comprehensive alphabetical list, most commonly selected appear first)
+   ==================================================================== */
+const COUNTRIES = [
+  "Afghanistan","Albania","Algeria","Angola","Argentina","Armenia","Australia",
+  "Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus",
+  "Belgium","Belize","Benin","Bhutan","Bolivia","Bosnia and Herzegovina",
+  "Botswana","Brazil","Brunei","Bulgaria","Burkina Faso","Burma (Myanmar)","Burundi",
+  "Cambodia","Cameroon","Canada","Cape Verde","Central African Republic","Chad",
+  "Chile","China","Colombia","Comoros","Congo (Democratic Republic)","Congo (Republic)",
+  "Costa Rica","Côte d'Ivoire","Croatia","Cuba","Cyprus","Czech Republic",
+  "Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt",
+  "El Salvador","Equatorial Guinea","Eritrea","Estonia","Eswatini","Ethiopia",
+  "Fiji","Finland","France","Gabon","Gambia","Georgia","Germany","Ghana",
+  "Greece","Grenada","Guatemala","Guinea","Guinea-Bissau","Guyana","Haiti",
+  "Honduras","Hong Kong","Hungary","Iceland","India","Indonesia","Iran","Iraq",
+  "Ireland","Israel","Italy","Jamaica","Japan","Jordan","Kazakhstan","Kenya",
+  "Kosovo","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia",
+  "Libya","Lithuania","Luxembourg","Madagascar","Malawi","Malaysia","Maldives",
+  "Mali","Malta","Mauritania","Mauritius","Mexico","Moldova","Mongolia",
+  "Montenegro","Morocco","Mozambique","Namibia","Nepal","Netherlands","New Zealand",
+  "Nicaragua","Niger","Nigeria","North Korea","North Macedonia","Norway","Oman",
+  "Pakistan","Palestine","Panama","Papua New Guinea","Paraguay","Peru",
+  "Philippines","Poland","Portugal","Qatar","Romania","Russia","Rwanda",
+  "Samoa","Saudi Arabia","Senegal","Serbia","Sierra Leone","Singapore","Slovakia",
+  "Slovenia","Somalia","South Africa","South Korea","South Sudan","Spain",
+  "Sri Lanka","Sudan","Suriname","Sweden","Switzerland","Syria","Taiwan",
+  "Tajikistan","Tanzania","Thailand","Timor-Leste","Togo","Trinidad and Tobago",
+  "Tunisia","Turkey","Turkmenistan","Uganda","Ukraine","United Arab Emirates",
+  "United Kingdom","Uruguay","Uzbekistan","Venezuela","Vietnam","Yemen","Zambia",
+  "Zimbabwe","Other / Prefer not to say"
+];
+
+/* ====================================================================
+   INTAKE (APPLICANT INFO)
+   ==================================================================== */
+function populateCountryDropdown() {
+  const sel = document.getElementById('applicantCountry');
+  // First option is already the placeholder
+  COUNTRIES.forEach(c => {
+    const opt = document.createElement('option');
+    opt.value = c;
+    opt.textContent = c;
+    sel.appendChild(opt);
+  });
+}
+
+function generateFileNumber() {
+  // fake N-400 style file number for flavor
+  const letters = 'ABCDEFGHJKLMNPQRSTUVWXYZ';
+  const L = letters[Math.floor(Math.random() * letters.length)];
+  const num = Math.floor(100000000 + Math.random() * 899999999);
+  return `A${num.toString().slice(0, 9)}-${L}`;
+}
+
+function getFirstName(fullName) {
+  const parts = fullName.trim().split(/\s+/);
+  return parts[0] || 'Applicant';
+}
+
+function submitIntake(e) {
+  e.preventDefault();
+  const name = document.getElementById('applicantName').value.trim();
+  const country = document.getElementById('applicantCountry').value;
+  if (!name || !country) return;
+
+  state.applicant.fullName = name;
+  state.applicant.firstName = getFirstName(name);
+  state.applicant.country = country;
+  state.applicant.fileNum = generateFileNumber();
+  state.applicant.startedAt = new Date();
+
+  // Load any saved progress for this applicant
+  loadProgress().then(() => {
+    updateApplicantUI();
+    updateDrillCard();
+    showView('home');
+  });
+}
+
+function resetApplicant() {
+  if (!confirm('Start over with different applicant information? Your progress stays saved under your current name.')) return;
+  state.applicant = { fullName: '', firstName: '', country: '', fileNum: '', startedAt: null };
+  state.progress = { mockTestsCompleted: 0, missed: {}, graduated: {} };
+  document.getElementById('intakeForm').reset();
+  showView('intake');
+  setTimeout(() => {
+    const f = document.getElementById('applicantName');
+    if (f) f.focus();
+  }, 200);
+}
+
+function updateApplicantUI() {
+  const app = state.applicant;
+  if (!app.fullName) return;
+
+  // Personalized banner on home
+  const hour = new Date().getHours();
+  const timeGreet = hour < 12 ? 'Good morning' : hour < 18 ? 'Good afternoon' : 'Good evening';
+  document.getElementById('applicantGreeting').innerHTML =
+    `${timeGreet}, <strong>${escapeHTML(app.fullName)}</strong>. <span style="opacity: 0.7;">From ${escapeHTML(app.country)}.</span>`;
+  document.getElementById('applicantFile').textContent = `File ${app.fileNum} · Practice Session`;
+
+  // Updated headline / subtext
+  document.getElementById('homeHeadline').innerHTML =
+    `Ready when you are, <em>${escapeHTML(app.firstName)}.</em>`;
+  document.getElementById('homeSubtext').innerHTML =
+    `This practice tool simulates the oral civics test administered during your naturalization interview. Select a study mode below to begin. All answers current as of <strong>April 2026</strong>.`;
+}
+
+/* ====================================================================
+   DRILL CARD — locked until 3 scored tests are completed
+   ==================================================================== */
+const DRILL_UNLOCK_THRESHOLD = 3;
+
+function updateDrillCard() {
+  const card = document.getElementById('drillCard');
+  const progress = state.progress;
+  const tests = progress.mockTestsCompleted;
+  const missedCount = countMissedQuestions();
+  const firstName = state.applicant.firstName || 'Applicant';
+
+  // Remove all state classes to start clean
+  card.classList.remove('locked', 'drill-ready');
+
+  if (tests < DRILL_UNLOCK_THRESHOLD) {
+    // LOCKED
+    card.classList.add('locked');
+    document.getElementById('drillNum').textContent = '/ 05 · LOCKED';
+    document.getElementById('drillTitle').textContent = 'Weakness Drill';
+    document.getElementById('drillDesc').textContent =
+      `Unlocks after you complete three full-length mock tests. Then drills you on every question you've missed, until you master each one.`;
+    document.getElementById('drillMeta').textContent =
+      `Complete ${DRILL_UNLOCK_THRESHOLD - tests} more test${tests === DRILL_UNLOCK_THRESHOLD - 1 ? '' : 's'} to unlock`;
+    document.getElementById('lockProgress').style.display = 'block';
+    document.getElementById('lockFill').style.width = `${(tests / DRILL_UNLOCK_THRESHOLD) * 100}%`;
+    document.getElementById('lockLabel').textContent = `${tests} / ${DRILL_UNLOCK_THRESHOLD} tests complete`;
+  } else if (missedCount === 0) {
+    // UNLOCKED but no missed questions yet
+    card.classList.add('locked'); // visually muted
+    document.getElementById('drillNum').innerHTML = '/ 05 · <span style="color: var(--success);">UNLOCKED</span>';
+    document.getElementById('drillTitle').textContent = 'No Weaknesses Yet';
+    document.getElementById('drillDesc').innerHTML =
+      `Impressive, <em>${escapeHTML(firstName)}</em>. You haven't missed any questions across your ${tests} test${tests === 1 ? '' : 's'}. Miss one and it'll appear here for drilling.`;
+    document.getElementById('drillMeta').textContent = '0 questions to drill';
+    document.getElementById('lockProgress').style.display = 'none';
+  } else {
+    // READY
+    card.classList.add('drill-ready');
+    document.getElementById('drillNum').innerHTML = '/ 05 <span class="drill-badge">READY</span>';
+    document.getElementById('drillTitle').textContent = 'Weakness Drill';
+    document.getElementById('drillDesc').textContent =
+      `Focused drill on questions you've missed. Each question stays in rotation until you answer it correctly twice — then it graduates and leaves the pool.`;
+    document.getElementById('drillMeta').textContent =
+      `${missedCount} question${missedCount === 1 ? '' : 's'} waiting · Answer each correctly twice to graduate`;
+    document.getElementById('lockProgress').style.display = 'none';
+  }
+}
+
+function handleDrillClick() {
+  const tests = state.progress.mockTestsCompleted;
+  const missedCount = countMissedQuestions();
+
+  if (tests < DRILL_UNLOCK_THRESHOLD) {
+    const remaining = DRILL_UNLOCK_THRESHOLD - tests;
+    alert(`Weakness Drill unlocks after 3 mock tests.\n\nYou've completed ${tests} so far. ${remaining} more to go — good luck, ${state.applicant.firstName}!`);
+    return;
+  }
+  if (missedCount === 0) {
+    alert(`You haven't missed any questions yet, ${state.applicant.firstName}. Take a mock test — miss something, and it'll show up here for focused practice.`);
+    return;
+  }
+  startMode('drill');
+}
+
+function escapeHTML(str) {
+  return String(str).replace(/[&<>"']/g, c => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+  })[c]);
+}
+
+/* ====================================================================
+   OFFICER DIALOGUE — personalized intros for the quiz
+   ==================================================================== */
+function getOfficerIntro() {
+  const app = state.applicant;
+  const name = app.firstName || 'Applicant';
+  const intros = [
+    `Thank you, ${name}. Please raise your right hand. I'm now going to ask you some civics questions.`,
+    `Alright ${name}, let's begin. Remember — you can answer in your own words.`,
+    `${name}, I'll ask the questions one at a time. Take your time with each answer.`,
+    `Good to meet you, ${name}. Let's start the civics portion of your examination.`,
+    `Ready when you are, ${name}. There are no trick questions — just answer to the best of your ability.`
+  ];
+  return intros[Math.floor(Math.random() * intros.length)];
+}
+
+function getOfficerAside(questionIndex, total) {
+  const app = state.applicant;
+  const name = app.firstName || 'Applicant';
+  const pct = (questionIndex + 1) / total;
+
+  // Only show asides at key moments to avoid noise
+  if (questionIndex === 0) return getOfficerIntro();
+  if (questionIndex === Math.floor(total / 2) && total >= 10) {
+    return `Halfway through, ${name}. You're doing well — let's continue.`;
+  }
+  if (questionIndex === total - 1 && total > 1) {
+    return `Last question, ${name}. Take your time.`;
+  }
+  return null;
+}
+
+/* ====================================================================
+   VIEW MANAGEMENT
+   ==================================================================== */
+function showView(id) {
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+/* ====================================================================
+   QUIZ MODES
+   ==================================================================== */
+function startMode(mode, subCategory = null) {
+  state.mode = mode;
+  state.idx = 0;
+  state.correct = 0;
+  state.incorrect = 0;
+  state.answers = [];
+
+  let labelText, titleText;
+
+  if (mode === 'mock') {
+    state.questions = shuffle(QUESTIONS).slice(0, 20);
+    state.passingScore = 12;
+    labelText = '/ Official Mock · 20 Questions';
+    titleText = 'Examination in Progress';
+  } else if (mode === 'senior') {
+    const starred = QUESTIONS.filter(q => q.star);
+    state.questions = shuffle(starred).slice(0, 10);
+    state.passingScore = 6;
+    labelText = '/ 65/20 Senior · 10 Questions';
+    titleText = 'Senior Examination';
+  } else if (mode === 'full') {
+    state.questions = [...QUESTIONS]; // in order
+    state.passingScore = 0;
+    labelText = '/ Complete Study · 128 Questions';
+    titleText = 'Full Study Mode';
+  } else if (mode === 'category') {
+    state.questions = QUESTIONS.filter(q => q.sub === subCategory);
+    state.passingScore = 0;
+    labelText = '/ Category Drill';
+    titleText = subCategory;
+  } else if (mode === 'drill') {
+    // Pull only missed, non-graduated questions
+    const missedNums = Object.keys(state.progress.missed)
+      .filter(n => !state.progress.graduated[n])
+      .map(Number);
+    const missedQs = QUESTIONS.filter(q => missedNums.includes(q.n));
+    state.questions = shuffle(missedQs);
+    state.passingScore = 0;
+    labelText = '/ Weakness Drill · Focused Practice';
+    titleText = 'Drilling Your Missed Questions';
+  }
+
+  document.getElementById('quizLabel').textContent = labelText;
+  document.getElementById('quizTitle').textContent = titleText;
+
+  showView('quiz');
+  renderQuestion();
+}
+
+function renderQuestion() {
+  const q = state.questions[state.idx];
+  state.revealed = false;
+  state.userAnswer = '';
+
+  // Update stats
+  document.getElementById('statPosition').textContent = `${state.idx + 1}/${state.questions.length}`;
+  document.getElementById('statCorrect').textContent = state.correct;
+  document.getElementById('statIncorrect').textContent = state.incorrect;
+  document.getElementById('statRemaining').textContent = state.questions.length - state.idx - 1;
+
+  const progress = ((state.idx) / state.questions.length) * 100;
+  document.getElementById('progressFill').style.width = `${progress}%`;
+
+  // Render question card
+  const card = document.getElementById('questionCard');
+  const aside = getOfficerAside(state.idx, state.questions.length);
+  card.innerHTML = `
+    <div class="q-meta">
+      <span class="q-num">Question ${q.n} ${q.star ? '<span class="q-star">★</span>' : ''}</span>
+      <span class="q-category">${q.cat} · ${q.sub}</span>
+    </div>
+    ${aside ? `<div class="officer-aside">${escapeHTML(aside)}</div>` : ''}
+    <div class="q-text">${q.q}</div>
+    <div class="answer-area">
+      <div class="prompt">Your Answer (optional — this helps you self-check)</div>
+      <input type="text" class="answer-input" id="answerInput" placeholder="Type your answer here, or just think it and reveal below…" autocomplete="off" spellcheck="false">
+      <div class="answer-reveal" id="answerReveal">
+        <div class="label">★ Accepted Answer(s)</div>
+        <ul>
+          ${q.a.map(ans => `<li>${ans}</li>`).join('')}
+        </ul>
+        ${q.note ? `<div class="note">Note: ${q.note}</div>` : ''}
+      </div>
+      <div class="judgment" id="judgment">
+        <button class="judge-btn correct" onclick="markResult('correct')">✓ I got it right</button>
+        <button class="judge-btn incorrect" onclick="markResult('incorrect')">✗ I was wrong</button>
+      </div>
+    </div>
+  `;
+
+  document.getElementById('revealBtn').disabled = false;
+  document.getElementById('revealBtn').textContent = 'Reveal Answer';
+  document.getElementById('nextBtn').disabled = true;
+
+  // Focus input
+  setTimeout(() => {
+    const inp = document.getElementById('answerInput');
+    if (inp) inp.focus();
+  }, 100);
+}
+
+function revealAnswer() {
+  if (state.revealed) return;
+  state.revealed = true;
+  const inp = document.getElementById('answerInput');
+  if (inp) state.userAnswer = inp.value.trim();
+
+  document.getElementById('answerReveal').classList.add('show');
+  document.getElementById('judgment').classList.add('show');
+  document.getElementById('revealBtn').disabled = true;
+  document.getElementById('revealBtn').textContent = 'Revealed';
+}
+
+function markResult(result) {
+  const q = state.questions[state.idx];
+  if (result === 'correct') state.correct++;
+  else state.incorrect++;
+
+  state.answers.push({
+    n: q.n,
+    q: q.q,
+    userAnswer: state.userAnswer,
+    result: result
+  });
+
+  // ===== Track missed questions across all modes =====
+  // Only score-tracking modes contribute: mock, senior, drill
+  // (study mode & category don't pollute the drill pool)
+  const tracksMistakes = ['mock', 'senior', 'drill'].includes(state.mode);
+
+  if (tracksMistakes) {
+    const nStr = String(q.n);
+    if (result === 'incorrect') {
+      // Add to missed pool — reset graduation if previously graduated
+      state.progress.missed[nStr] = (state.progress.missed[nStr] || 0) + 1;
+      delete state.progress.graduated[nStr];
+    } else if (result === 'correct' && state.mode === 'drill') {
+      // In drill mode, tally correct answers on missed questions
+      // Graduate after 2 correct answers in drill mode
+      state.progress.missed[nStr] = Math.max(0, (state.progress.missed[nStr] || 1) - 1);
+      if (state.progress.missed[nStr] === 0) {
+        state.progress.graduated[nStr] = true;
+      }
+    }
+    // Save progress (async, fire and forget)
+    saveProgress();
+  }
+
+  // Update the judge buttons to show selection
+  const judgeBtns = document.querySelectorAll('.judge-btn');
+  judgeBtns.forEach(b => { b.disabled = true; b.style.opacity = '0.4'; });
+  const chosen = document.querySelector(`.judge-btn.${result}`);
+  if (chosen) {
+    chosen.style.opacity = '1';
+    if (result === 'correct') {
+      chosen.style.background = 'var(--success)';
+      chosen.style.color = 'var(--paper)';
+      chosen.style.borderColor = 'var(--success)';
+    } else {
+      chosen.style.background = 'var(--red)';
+      chosen.style.color = 'var(--paper)';
+      chosen.style.borderColor = 'var(--red)';
+    }
+  }
+
+  document.getElementById('nextBtn').disabled = false;
+  document.getElementById('statCorrect').textContent = state.correct;
+  document.getElementById('statIncorrect').textContent = state.incorrect;
+}
+
+function nextQuestion() {
+  if (state.idx + 1 >= state.questions.length) {
+    finishQuiz();
+    return;
+  }
+  state.idx++;
+  renderQuestion();
+}
+
+function exitQuiz() {
+  if (state.idx > 0 && confirm('Exit this examination? Your progress will not be saved.')) {
+    showView('home');
+  } else if (state.idx === 0) {
+    showView('home');
+  }
+}
+
+/* ====================================================================
+   RESULTS
+   ==================================================================== */
+function finishQuiz() {
+  const total = state.correct + state.incorrect;
+  const answered = state.answers.length;
+  const app = state.applicant;
+  const firstName = app.firstName || 'Applicant';
+  const fullName = app.fullName || 'Applicant';
+
+  // Increment the test counter for mock/senior completions
+  if (state.mode === 'mock' || state.mode === 'senior') {
+    state.progress.mockTestsCompleted++;
+    saveProgress();
+  }
+
+  document.getElementById('resultsScore').textContent = `${state.correct}/${answered}`;
+
+  let passMessage, passClass, metaText, verdict;
+
+  if (state.mode === 'mock') {
+    const passed = state.correct >= state.passingScore;
+    passClass = passed ? 'pass' : 'fail';
+    passMessage = passed ? 'Passed — Recommendation: Approved' : 'Did Not Pass — Additional Study Needed';
+    verdict = passed
+      ? `Congratulations, ${firstName}`
+      : `Keep Studying, ${firstName}`;
+    metaText = passed
+      ? `${fullName}, you answered at least ${state.passingScore} of 20 correctly. On the real civics test, this would be a passing score. Continue practicing all 128 questions before your interview to build confidence.`
+      : `${firstName}, you need at least ${state.passingScore} correct to pass the civics test. Review the questions you missed below and try again — most applicants pass on their next attempt after focused study.`;
+
+    // Notify about drill unlock if it just happened
+    if (state.progress.mockTestsCompleted === DRILL_UNLOCK_THRESHOLD) {
+      metaText += ` · NEW: Your Weakness Drill mode is now unlocked on the home screen.`;
+    }
+  } else if (state.mode === 'senior') {
+    const passed = state.correct >= state.passingScore;
+    passClass = passed ? 'pass' : 'fail';
+    passMessage = passed ? 'Passed (65/20 Special Consideration)' : 'Did Not Pass';
+    verdict = passed ? `Well Done, ${firstName}` : `Keep Practicing, ${firstName}`;
+    metaText = passed
+      ? `${fullName}, you answered at least ${state.passingScore} of 10 correctly — a passing score under the 65/20 Special Consideration rules.`
+      : `${firstName}, seniors need 6 of 10 correct to pass. Review missed questions below and try again.`;
+  } else if (state.mode === 'drill') {
+    const remainingMissed = countMissedQuestions();
+    const graduatedThisSession = answered - remainingMissed;
+    passClass = remainingMissed === 0 ? 'pass' : '';
+    passMessage = remainingMissed === 0
+      ? 'All weaknesses graduated!'
+      : `${remainingMissed} question${remainingMissed === 1 ? '' : 's'} still in rotation`;
+    verdict = remainingMissed === 0
+      ? `Perfect, ${firstName}`
+      : `Drill Session Complete, ${firstName}`;
+    metaText = remainingMissed === 0
+      ? `${fullName}, every question you'd previously missed has now been answered correctly twice and graduated from the drill pool. Take a fresh mock test to check your overall mastery.`
+      : `You answered ${state.correct} of ${answered} correctly this session. Remember — each question needs two correct answers in drill mode to graduate. Keep going.`;
+  } else {
+    passClass = '';
+    passMessage = `${state.correct} correct, ${state.incorrect} incorrect`;
+    verdict = `Session Complete, ${firstName}`;
+    metaText = `${firstName}, you completed ${answered} question${answered === 1 ? '' : 's'}. Keep practicing — the real examination is an oral test, so try saying your answers out loud.`;
+  }
+
+  document.getElementById('resultsVerdict').textContent = verdict;
+  document.getElementById('resultsPass').textContent = passMessage;
+  document.getElementById('resultsPass').className = 'results-pass ' + passClass;
+  document.getElementById('resultsMeta').textContent = metaText;
+
+  // Review list
+  const reviewHTML = state.answers.map(a => `
+    <div class="review-item">
+      <span class="review-num">#${String(a.n).padStart(3, '0')}</span>
+      <span class="review-q">${a.q}</span>
+      <span class="review-result ${a.result}">${a.result === 'correct' ? '✓ Correct' : '✗ Missed'}</span>
+    </div>
+  `).join('');
+  document.getElementById('reviewItems').innerHTML = reviewHTML;
+
+  // Refresh drill card so when user returns home, it reflects new state
+  updateDrillCard();
+
+  showView('results');
+}
+
+function restartSameMode() {
+  if (state.mode && state.mode !== 'category') {
+    startMode(state.mode);
+  } else {
+    showView('home');
+  }
+}
+
+/* ====================================================================
+   CATEGORY BROWSER
+   ==================================================================== */
+function renderCategories() {
+  const groups = [
+    {
+      title: 'American Government',
+      roman: 'I',
+      subs: [
+        { name: 'Principles', label: 'Principles of American Government', range: '1–15' },
+        { name: 'System', label: 'System of Government', range: '16–62' },
+        { name: 'Rights', label: 'Rights and Responsibilities', range: '63–72' }
+      ]
+    },
+    {
+      title: 'American History',
+      roman: 'II',
+      subs: [
+        { name: 'Colonial', label: 'Colonial Period and Independence', range: '73–89' },
+        { name: '1800s', label: 'The 1800s', range: '90–99' },
+        { name: 'Recent', label: 'Recent History & Historical Information', range: '100–118' }
+      ]
+    },
+    {
+      title: 'Symbols & Holidays',
+      roman: 'III',
+      subs: [
+        { name: 'Symbols', label: 'National Symbols', range: '119–124' },
+        { name: 'Holidays', label: 'National Holidays', range: '125–128' }
+      ]
+    }
+  ];
+
+  const html = groups.map(g => `
+    <div class="cat-section">
+      <h3>${g.title} <span class="num">PART ${g.roman}</span></h3>
+      <div class="cat-chips">
+        ${g.subs.map(s => `
+          <button class="cat-chip" onclick="startMode('category', '${s.name}')">
+            ${s.label} <span style="opacity:0.5; margin-left:4px;">(${s.range})</span>
+          </button>
+        `).join('')}
+      </div>
+    </div>
+  `).join('');
+
+  document.getElementById('categoryList').innerHTML = html;
+}
+
+/* ====================================================================
+   INIT
+   ==================================================================== */
+populateCountryDropdown();
+renderCategories();
+
+// Focus on the name field when the app first opens
+window.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    const nameField = document.getElementById('applicantName');
+    if (nameField) nameField.focus();
+  }, 300);
+});
+
+// Enter key in answer input triggers reveal
+document.addEventListener('keydown', (e) => {
+  const quizActive = document.getElementById('quiz').classList.contains('active');
+  if (!quizActive) return;
+
+  if (e.key === 'Enter') {
+    const nextBtn = document.getElementById('nextBtn');
+    const revealBtn = document.getElementById('revealBtn');
+    if (!nextBtn.disabled) {
+      e.preventDefault();
+      nextQuestion();
+    } else if (!revealBtn.disabled) {
+      e.preventDefault();
+      revealAnswer();
+    }
+  }
+});
+</script>
+
+</body>
+</html>
